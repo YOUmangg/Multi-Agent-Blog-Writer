@@ -32,9 +32,11 @@ writer = Agent(
 #Editor Agent
 editor = Agent(
     role = 'Editor',
-    goal = 'Review and edit the blog post for clarity, grammar, and SEO optimization',
-    backstory = 'An experienced editor with a keen eye for detail and SEO best practices',
+    goal = 'Review and edit the blog post on {topic} for clarity, grammar, and SEO optimization',
+    backstory = 'An experienced editor with a keen eye for detail and SEO best practices. You ensurethe blog post is polished and ready for publication, aligning with the brand voice and style.',
     verbose = True,
     allow_delegation = False,
     llm = llm
 )
+
+#Add image generation agent in the future

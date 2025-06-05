@@ -1,0 +1,28 @@
+| Benefit                | Explanation                                                                                                                                 |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Specialization**     | Each agent has a focused role—allowing the model to behave as a domain expert. This mimics real-world team structures.                      |
+| **Context Isolation**  | Agents are only given the context they need. This avoids prompt bloating and encourages task relevance.                                     |
+| **Better Performance** | Instead of overloading a single LLM with end-to-end logic, each task is simplified, which leads to better coherence and less hallucination. |
+| **Reusability**        | You can reuse or swap agents (e.g., a new Editor model) without affecting others.                                                           |
+| **Transparency**       | Each step’s output is visible, debuggable, and can be audited or corrected.                                                                 |
+
+Why multi-agent?
+
+Specialization : Each of the agents in the multi-agent system is behaving as a domain-expert. This mimics the real world scenario
+where experts adept at one task handle their work and pass on the results to other colleague / team, and improves the efficiency
+of the sub-task.
+
+Context-isolation and Better Performance : Agents are only given the context they need. This avoids prompt bloating and encourages task relevance.
+Also, instead of overloading a single LLM with end-to-end logic, each task is simplified, which leads to better coherence and less hallucination. 
+
+Reusability : We can change the llm being used by any agent without affecting the other agents work / llms.
+
+Transparency : Each agent's output is visible and each sub-task can be debugged. 
+
+Why CrewAI and Google Gemini Flash?
+
+CrewAI : It is designed specifically for multi-agent collaboration. Easy to define roles, tasks, backstories, and context flows.
+It is open-source and extensible, ideal for experimentation or production workflows.
+
+Gemini 2.0 Flash : Optimized for speed and cost (via Flash version). It also gives strong performance on summarization, reasoning, and content generation.
+Moreover, it is Multimodal-ready (for future extensions like image captions or data charts in blogs).

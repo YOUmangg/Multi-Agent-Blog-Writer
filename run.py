@@ -1,6 +1,7 @@
 from agents import researcher, writer, editor
 from tasks import task1, task2, task3
 from crewai import Crew
+# from Ipython.display import Markdown
 
 crew = Crew(
     agents=[researcher, writer, editor],
@@ -11,3 +12,6 @@ crew = Crew(
 result = crew.kickoff(inputs={
     "topic": "AI in Healthcare"
 })
+
+#Aesthetically print the result with markdown formatting
+# print(Markdown(result))
