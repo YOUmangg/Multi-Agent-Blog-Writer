@@ -24,7 +24,7 @@ Problem Statement :
 
 ### Interaction Workflow
 A[User Input] --> B(Planner)
-B --> C{Research Phase}
+B --> C{Research Phase} <-> Delegation to assistant_researcher can happen
 C --> D[Writer]
 D --> E{Editing Phase}
 E --> F[Editor]
@@ -32,7 +32,8 @@ F --> G[Final Output]
 
 ### Backend
 - **Framework**: Crew AI v1.2+
-- **LLM**: Gemini 2.0-Flash-EXP
+- **LLMS**: Gemini 2.0-Flash-EXP, Gemini 1.0-Flash-EXP
+- **Embeddings**: gemini-embedding-exp-03-07
 
 Steps to run: 
 
