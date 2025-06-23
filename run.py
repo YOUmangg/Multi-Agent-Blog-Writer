@@ -23,7 +23,7 @@ crew = Crew(
             "api_key": GEMINI_API_KEY,  # Replace with your actual API key
             "model": "gemini-embedding-exp-03-07"
         }
-    },
+    }, #use when memory is enabled. By default, the embedder used is OpenAI's text-embedding
     verbose=1
 )
 

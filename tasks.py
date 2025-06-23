@@ -1,5 +1,8 @@
 from crewai import Task, LLM
+# from crewai.tools import DuckDuckGoSearchRun
+from tools import DuckDuckGoSearchTool
 from agents import researcher, writer, editor
+from tools import DuckDuckGoSearchRun
 
 # Initialize the LLM
 llm = LLM(
@@ -12,6 +15,7 @@ research_task = Task(
     agent=researcher,
     backstory="You are a content strategist who specializes in identifying trending topics and SEO keywords.",
     expected_output="A list of trending topics and a set of relevant SEO keywords, which are less than 200 words in total.",
+    tools=[DuckDuckGoSearchTool()]
 )
 
 writing_task = Task(
