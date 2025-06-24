@@ -27,9 +27,9 @@ crew = Crew(
     verbose=1
 )
 
-result = crew.kickoff(inputs={
-    "topic": "God of war Ragnarok : How it revolutionized the gaming industry",
-})
+#create user input to give topic for a blog post
+topic = input("Enter the topic for the blog post: ")
+result = crew.kickoff(inputs={"topic": topic})
 
 #checking the token usage
 print('result_max_tokens:', result.token_usage)
@@ -42,3 +42,4 @@ print('Blog post saved to result.txt')
 
 #Aesthetically print the result with markdown formatting
 # print(Markdown(result))
+
