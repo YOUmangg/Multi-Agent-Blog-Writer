@@ -1,5 +1,4 @@
 from crewai import Task, LLM
-# from crewai.tools import DuckDuckGoSearchRun
 from tools import DuckDuckGoSearchTool, ImageGenerationTool
 from agents import researcher, writer, editor, images_generator
 from Output_Formats import Image_output  

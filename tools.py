@@ -1,7 +1,7 @@
 from langchain_community.tools import DuckDuckGoSearchRun
 from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
-from typing import ClassVar, Type  # Added for type annotations
+from typing import ClassVar, Type  # For type annotations
 from together import Together
 
 
@@ -10,9 +10,9 @@ class DuckDuckGoSearchToolSchema(BaseModel):
     query: str = Field(..., description="The search query to look up on DuckDuckGo.")
 
 class DuckDuckGoSearchTool(BaseTool):
-    name: str = "DuckDuckGo Search"  # Added type annotation
-    description: str = "Searches DuckDuckGo for relevant information."  # Added type annotation
-    args_schema: Type[BaseModel] = DuckDuckGoSearchToolSchema  # Added type annotation
+    name: str = "DuckDuckGo Search"  
+    description: str = "Searches DuckDuckGo for relevant information."
+    args_schema: Type[BaseModel] = DuckDuckGoSearchToolSchema 
 
     def _run(self, query: str):
         search = DuckDuckGoSearchRun()
@@ -23,9 +23,9 @@ class ImageGenerationToolSchema(BaseModel):
     content: str = Field(..., description="The content based on which the image is generated.")
 
 class ImageGenerationTool(BaseTool):
-    name: str = "Image Generation Tool"  # Added type annotation
-    description: str = "Generates images based on the provided sub-heading and content."  # Added type annotation
-    args_schema: Type[BaseModel] = ImageGenerationToolSchema  # Added type annotation
+    name: str = "Image Generation Tool" 
+    description: str = "Generates images based on the provided sub-heading and content." 
+    args_schema: Type[BaseModel] = ImageGenerationToolSchema  
 
     def _run(self, sub_heading: str, content: str):
         # black-forest-labs/FLUX.1-schnell-Free 
@@ -33,11 +33,8 @@ class ImageGenerationTool(BaseTool):
         response = client.images.generate(
             prompt = "Generate an image for the sub-heading: " + sub_heading +
                      " with the following content: " + content,
-            model = "black-forest-labs/FLUX.1-schnell-Free",  # Specify the model to use
+            model = "black-forest-labs/FLUX.1-schnell-Free",  # Can change to any other model available in Together API
             n = 1,
             steps = 2
         )
         return response.data[0].b64_json
-
-
-        return f"Image generated for sub-heading '{sub_heading}' with content '{content}'."

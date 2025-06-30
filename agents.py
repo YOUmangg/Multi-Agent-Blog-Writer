@@ -77,5 +77,3 @@ editor = Agent(
     allow_delegation = False,
     llm = llm
 )
-
-#Add image generation agent in the future
